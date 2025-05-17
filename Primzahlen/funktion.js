@@ -1,35 +1,22 @@
-function isPrime(n) {
-  if (n < 2) return false;
-  for (let i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) return false;
-  }
-  return true;
-}
+const express = require('express');
+const cors = require('cors');
+const app = express();
+const port = 3000;
 
-function checkPrime() {
-  let input = document.getElementById("numberInput").value;
-  let resultText = document.getElementById("result");
+app.use(cors());
 
-  if (!/^\d+$/.test(input)) {
-      resultText.style.color = "red";
-      resultText.innerText = "Ungültiger Eintrag! Nur ganze Zahlen erlaubt.";
-      return;
-  }
+const products = [
+  { id: 1, name: 'Apfel', price: 1.0 },
+  { id: 2, name: 'Banane', price: 1.2 },
+  { id: 3, name: 'Schokolade', price: 2.5 }
+];
 
-  let num = parseInt(input, 10);
+app.get('/api/products', (req, res) => {
+  let total = 0;
+  products.forEach(p => total += p.price); // Breakpoint setzen
+  res.json({ products, total });
+});
 
-  if (isPrime(num)) {
-      resultText.style.color = "green";
-      resultText.innerText = `${num} ist eine Primzahl.`;
-  } else {
-      resultText.style.color = "red";
-      resultText.innerText = `${num} ist keine Primzahl.`;
-  }
-}
-
-// Event-Listener für "Enter"-Taste hinzufügen
-document.getElementById("numberInput").addEventListener("keypress", function(event) {
-  if (event.key === "Enter") {
-      checkPrime();
-  }
+app.listen(port, () => {
+  console.log(`MiniShop Backend läuft auf http://localhost:${port}`);
 });

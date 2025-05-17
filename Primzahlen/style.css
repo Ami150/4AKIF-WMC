@@ -1,60 +1,41 @@
-/* Hintergrundbild für die gesamte Seite */
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   font-family: Arial, sans-serif;
-  margin: 0;
-  color: white;
-  background: url('mathematischer-und-geometrischer-hintergrundvektor-im-blauen-bildungsremix-des-farbverlaufs_53876-114100.avif') no-repeat center center fixed;
-  background-size: cover;
+  background-color: #f2f2f2;
+  margin: 2rem;
 }
 
-.container {
-  text-align: center;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 0 20px white;
-  width: 320px;
-  min-height: 220px;
-}
-
-h2 {
-  color: #f0f0f0;
-}
-
-input {
-  width: 85%;
-  padding: 10px;
-  margin: 12px 0;
-  border: 1px solid #777;
-  border-radius: 5px;
-  text-align: center;
-  font-size: 16px;
-  background: #222;
-  color: white;
+h1 {
+  color: #333;
 }
 
 button {
-  background: #007BFF;
+  background-color: #4CAF50;
   color: white;
-  padding: 10px 15px;
   border: none;
-  border-radius: 5px;
+  padding: 10px 20px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background 0.3s ease-in-out;
+  font-size: 1rem;
+  border-radius: 5px;
 }
 
 button:hover {
-  background: #0056b3;
+  background-color: #45a049;
 }
 
-/* Ergebnisanzeige */
-#result {
-  margin-top: 15px;
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  background-color: white;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+p#totalPrice {
   font-weight: bold;
-  font-size: 18px;
+  margin-top: 1rem;
 }

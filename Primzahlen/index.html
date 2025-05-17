@@ -1,20 +1,34 @@
-<!DOCTYPE html>
-<html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Primzahlprüfung</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>MiniShop</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <h1>MiniShop</h1>
+  <button onclick="loadProducts()">Produkte laden</button>
+  <ul id="productList"></ul>
+  <p id="totalPrice"></p>
 
-    <div class="container">
-        <h2>Primzahlprüfung</h2>
-        <input type="text" id="numberInput" placeholder="Ganze Zahl eingeben">
-        <button onclick="checkPrime()">Überprüfen</button>
-        <p id="result"></p>
-    </div>
+  <script>
+    async function loadProducts() {
+      let url = 'http://localhost:3000/api/products';
+      let shopName = 'MiniShop'; // Breakpoint hier!
+      shopName += ' Debug'; // Debugger zeigt Veränderung
+      
+      const res = await fetch(url);
+      const data = await res.json();
 
-    <script src="funktion.js"></script>
+      let list = document.getElementById('productList');
+      list.innerHTML = '';
+
+      data.products.forEach(p => {
+        let item = document.createElement('li');
+        item.textContent = `${p.name}: €${p.price}`;
+        list.appendChild(item);
+      });
+
+      document.getElementById('totalPrice').textContent = `Gesamt: €${data.total}`;
+    }
+  </script>
 </body>
-</html> 
+</html>
