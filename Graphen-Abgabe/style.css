@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  background-image: url("hintergrundbild.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  padding: 60px 20px; /* Mehr Abstand oben/unten */
+}
+
+/* Titel schöner sichtbar */
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: white;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+}
+
+/* Layout der Hauptbereiche */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+/* Rechenboxen */
+section {
+  background: rgba(255, 255, 255, 0.95); /* leicht transparent */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+/* Eingabefelder */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* Buttons */
+button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Ergebnistext */
+p {
+  margin-top: 10px;
+  font-weight: bold;
+}

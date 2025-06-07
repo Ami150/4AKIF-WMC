@@ -39,7 +39,7 @@ Werfe nun Fehler, wenn die "arguments" des constructors nicht Länge 1 haben.
 ### Task 7: Quiz constructor
 
 Der constructor bekommt eine Liste an "POJO's" (plain old javascript objects)
-auz der Datei `fragen.js`.
+aus der Datei `fragen.js`.
 Jedes Element der Liste soll als `new Frage(a,b,c)` an quiz.fragen angehängt werden.
 
 ### Task 8: getFragenByLength

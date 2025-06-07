@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Alltagsrechner Deluxe</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Alltagsrechner Deluxe</h1>
+
+  <div class="container">
+
+    <!-- BMI Bereich -->
+    <section>
+      <h2>BMI-Rechner</h2>
+      <input type="number" id="gewicht" placeholder="Gewicht (kg)">
+      <input type="number" id="groesse" placeholder="Größe (m)">
+      <button onclick="berechneBMI()">Berechne BMI</button>
+      <p id="bmiErgebnis"></p>
+    </section>
+
+    <!-- Zinsen Bereich -->
+    <section>
+      <h2>Zinsrechner</h2>
+      <input type="number" id="kapital" placeholder="Kapital (€)">
+      <input type="number" id="zinssatz" placeholder="Zinssatz (%)">
+      <input type="number" id="jahre" placeholder="Jahre">
+      <button onclick="berechneZinsen()">Berechne Zinsen</button>
+      <p id="zinsErgebnis"></p>
+    </section>
+
+    <!-- Umrechner Bereich -->
+    <section>
+      <h2>Umrechner: Celsius ↔ Fahrenheit</h2>
+      <input type="number" id="temperatur" placeholder="Temperatur">
+      <button onclick="cToF()">C → F</button>
+      <button onclick="fToC()">F → C</button>
+      <p id="umrechnerErgebnis"></p>
+    </section>
+
+    <!-- CSV Bereich -->
+    <section>
+      <h2>CSV-Analyse (Name,Wert)</h2>
+      <textarea id="csvInput" rows="6" placeholder="Name,Wert&#10;A,10&#10;B,20"></textarea>
+      <button onclick="sendeCSV()">CSV analysieren</button>
+      <p id="csvErgebnis"></p>
+    </section>
+
+    <!-- Währungsrechner (externe API) -->
+    <section>
+      <h2>Währungsrechner</h2>
+      <input type="number" id="eurBetrag" placeholder="Betrag in EUR">
+      <button onclick="holeKurs()">Umrechnen in USD</button>
+      <p id="wechselkursErgebnis"></p>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

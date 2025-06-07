@@ -8,7 +8,7 @@ export class Frage{
     if(typeof antwort != 'string') throw new Error('Antwort muss String sein');
     if(!optionen.includes(antwort))
       throw new Error('Antwort muss teil der Option sein'); 
-  
+
 
   this.frage = frage;
   this.optionen = optionen;
@@ -22,11 +22,10 @@ export class Quiz{
 constructor (fragenListe){
   if(arguments.length !== 1) throw new Error('Genau 1 Error erwartet');
 
-  this.fragen = fragenListe.map((obj) => new Frage(obj.frage, obj.optionen, obj.antwort
-  ));
+  this.fragen = fragenListe.map((obj) => new Frage(obj.frage, obj.optionen, obj.antwort));
 }
   getFragenByLength(minLen) {
-    return this.fragen.filter((f) => f.frage.length >= minLen);
+    return this.fragen.filter((f) => f.frage.length >= minLen); 
 }
 
 getFragenSortedByLength() {
@@ -46,6 +45,5 @@ getAllOptions() {
     const all = this.fragen.flatMap(f => f.optionen);
     return [...new Set(all)];
 }
-
 
 }
