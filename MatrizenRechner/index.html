@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Graphanalyse</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Graph Tools</h1>
+  </header>
+
+  <main class="card">
+    <h2>Graphanalyse</h2>
+    
+    <div class="grid">
+      <div>
+        <label for="matrixInput">Adjazenzmatrix (Zeilenweise):</label>
+        <textarea id="matrixInput" rows="6" placeholder="0 1 1&#10;1 0 1&#10;1 1 0"></textarea>
+      </div>
+      <div>
+        <label for="csvUpload">Oder lade eine CSV-Datei hoch:</label>
+        <input type="file" id="csvUpload" accept=".csv" />
+      </div>
+    </div>
+
+    <div class="inline-group">
+      <label for="powerInput">Potenz (k):</label>
+      <input type="number" id="powerInput" value="2" min="1" />
+      <button id="calculateBtn">Analyse starten</button>
+    </div>
+
+    <h3>Ergebnisse:</h3>
+    <pre id="output"></pre>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
