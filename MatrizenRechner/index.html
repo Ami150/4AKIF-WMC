@@ -8,16 +8,16 @@
 </head>
 <body>
   <header>
-    <h1>Graph Tools</h1>
+    Graphenanalyse – Potenzmatrix, Distanzmatrix & Exzentrizitäten
   </header>
 
   <main class="card">
-    <h2>Graphanalyse</h2>
-    
+    <h2>Adjazenzmatrix eingeben</h2>
+
     <div class="grid">
       <div>
-        <label for="matrixInput">Adjazenzmatrix (Zeilenweise):</label>
-        <textarea id="matrixInput" rows="6" placeholder="0 1 1&#10;1 0 1&#10;1 1 0"></textarea>
+        <label for="matrixInput">Matrix (zeilenweise, mit Leerzeichen):</label>
+        <textarea id="matrixInput" rows="8" placeholder="z. B.&#10;0 1 0&#10;1 0 1&#10;0 1 0"></textarea>
       </div>
       <div>
         <label for="csvUpload">Oder lade eine CSV-Datei hoch:</label>
@@ -25,13 +25,14 @@
       </div>
     </div>
 
-    <div class="inline-group">
-      <label for="powerInput">Potenz (k):</label>
-      <input type="number" id="powerInput" value="2" min="1" />
-      <button id="calculateBtn">Analyse starten</button>
-    </div>
+    <h3>Optionale Matrixpotenz</h3>
+<div class="inline-group">
+  <label for="powerInput">Potenz k (nur für gezielte Potenzmatrix-Berechnung):</label>
+  <input type="number" id="powerInput" min="1" placeholder="Leer lassen für automatische Analyse" />
+  <button id="calculateBtn">Analyse starten</button>
+</div>
 
-    <h3>Ergebnisse:</h3>
+    <h3>Ausgabe</h3>
     <pre id="output"></pre>
   </main>
 
